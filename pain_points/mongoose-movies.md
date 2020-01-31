@@ -4,6 +4,7 @@
 
 - Don't forget to do **npm install** so that you install all the dependencies you need at once (otherwise you are going to have error in the console for every module you don't have). 
 - Also, define the **.env** file as precised in the lab as you are using the PORT variable in bin/www
+- Write your css in the **scss file** !
 
 ## DON'T GET CONFUSED ##
 
@@ -32,4 +33,5 @@ Until now, the main logic of your app was in app.js / server.js. **With Express 
 That is basically using an "a" tag with a href that contains the id of the element you are looping over in the each loop
 
 ### Iteration 4 ###
-In this iteration you are not supposed to use create() as we have seen in class until now but instead **create an instance of the model first and then use the save() method**. In Mongoose doc, you get an example comparing both: https://mongoosejs.com/docs/models.html
+Use create() new element. Since create() also does the saving, you do not need to use save()
+
