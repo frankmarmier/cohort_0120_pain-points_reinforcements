@@ -8,7 +8,7 @@
 ## DON'T GET CONFUSED ##
 
 - The lab was created with Express Generator. The structure of an app created with Express generator is a little bit different from the one you used until now building an app from scratch. 
-Until now, the main logic of your app was in app.js / server.js. **With Express generator, this logic is splitted between the app.js/server.js, and a file called www in the bin folder**. That is why your "dev" script in your package.json might seems strange to you, but it does basically the same thing as when you do nodemon app.js/server.js. **Don't forget to change it**  so that it also takes care of hbs and js changes: **"DEBUG=starter-code:* nodemon ./bin/www -e hbs,js"**
+Until now, the main logic of your app was in app.js / server.js. **With Express generator, this logic is splitted between the app.js/server.js, and a file called www in the bin folder**. That is why your "dev" script in your package.json might seems strange to you, but it does basically the same thing as when you do nodemon app.js/server.js. **Don't forget to change it**  so that it also takes care of hbs and js changes: **"DEBUG=starter-code:* nodemon ./bin/www -e hbs, js"**
 
 ## DON'T FREAK OUT ##
 
