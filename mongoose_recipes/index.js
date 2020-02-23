@@ -36,53 +36,53 @@ const franklesRecipe = {
 //     );
 //   })
 //   .then(updatedRecipe => {
-//     console.log(updatedRecipe);
+//     // console.log(updatedRecipe);
 //     return Recipe.findOneAndDelete({ title: "Carrot Cake" });
 //   })
 //   .then(() => {
-//     mongoose.connection.close().then(() => console.log("closed"));
+//     // console.log(updatedRecipe);
+//     // mongoose.connection.close().then(() => console.log("closed"));
 //   })
 //   .catch(err => console.error("Error connecting to mongo", err));
 
-// mongoose
-//   .connect("mongodb://localhost/recipe-app-dev", {
-//     useCreateIndex: true,
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   })
-//   .then(x => {
-//     console.log("Connected to the database");
-//     Recipe.create(franklesRecipe)
-//       .then(recipe => {
-//         console.log(recipe.title);
-//         Recipe.insertMany(data)
-//           .then(recipes => {
-//             recipes.forEach(r => console.log(r.title));
-//             Recipe.updateOne(
-//               { title: "Rigatoni alla Genovese" },
-//               { duration: 100 }
-//             )
-//               .then(updatedRecipe => {
-//                 console.log(updatedRecipe);
-//                 Recipe.deleteOne({ title: "Carrot Cake" })
-//                   .then(() => {
-//                     console.log("Carrot cake deleted");
-//                     mongoose.connection
-//                       .close()
-//                       .then(() => {
-//                         console.log("closed");
-//                       })
-//                       .catch(err => console.log("Error closing", err));
-//                   })
-//                   .catch(err => console.log(err));
-//               })
-//               .catch(err => console.log(err));
-//           })
-//           .catch(err => console.log(err));
-//       })
-//       .catch(err => console.log(err));
-//   })
-//   .catch(err => console.log(err));
+mongoose
+  .connect("mongodb://localhost/recipe-app-dev", {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(x => {
+    console.log("Connected to the database");
+    Recipe.create(franklesRecipe)
+      .then(recipe => {
+        console.log(recipe.title);
+        Recipe.insertMany(data)
+          .then(recipes => {
+            recipes.forEach(r => console.log(r.title));
+            Recipe.updateOne(
+              { title: "Rigatoni alla Genovese" },
+              { duration: 100 }
+            )
+              .then(updatedRecipe => {
+                // console.log(updatedRecipe);
+                Recipe.deleteOne({ title: "Carrot Cake" })
+                  .then(() => {
+                    console.log("Carrot cake deleted");
+
+                    mongoose.connection
+                      .close()
+                      .then({})
+                      .catch(err => console.log("Error closing", err));
+                  })
+                  .catch(err => console.log(err));
+              })
+              .catch(err => console.log(err));
+          })
+          .catch(err => console.log(err));
+      })
+      .catch(err => console.log(err));
+  })
+  .catch(err => console.log(err));
 
 // // //Async await
 async function createRecipes(cb) {
@@ -92,24 +92,33 @@ async function createRecipes(cb) {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
-    console.log("Promise 1")
-     const recipe = await Recipe.create(franklesRecipe).catch(err => console.log(err));
-     console.log(recipe,"this is recipe")
-    console.log("Promise 2")
-     const recipes = await Recipe.insertMany(data).catch(err => console.log(err));
-    console.log("Promise 3")
-     const updatedRecipe =await Recipe.updateOne({title: "feahiufea"},{duration: 100},{new:true});
-    console.log("Promise 4")
+    console.log("Promise 1");
+    const recipe = await Recipe.create(franklesRecipe).catch(err =>
+      console.log(err)
+    );
+    // console.log(recipe, "this is recipe");
+    console.log("Promise 2");
+    const recipes = await Recipe.insertMany(data).catch(err =>
+      console.log(err)
+    );
+    console.log("Promise 3");
+    const updatedRecipe = await Recipe.updateOne(
+      { title: "feahiufea" },
+      { duration: 100 },
+      { new: true }
+    );
+    console.log("Promise 4");
     await mongoose.connection.close();
-    console.log("Promise 5")
-    
+    console.log("Promise 5");
+    console.log("Je suis censé etre là avant");
   } catch (err) {
     console.log(err);
   }
 }
 
-createRecipes();
-console.log("Supposed to happen after");
+// createRecipes();
+// console.log("Je suis censé etre la après");
+// console.log("Supposed to happen after");
 // mongoose
 //   .connect("mongodb://localhost/recipe-app-dev", {
 //     useCreateIndex: true,
@@ -130,7 +139,7 @@ console.log("Supposed to happen after");
 //               { duration: 100 },
 //               { new: true }
 //             )
-//               .then(updatedRecipe => {
+//             .then(updatedRecipe => {
 //                 console.log("Promise n°4");
 //                 Recipe.deleteOne({ title: "Carrot Cake" })
 //                   .then(deletedRecipe => {
@@ -138,9 +147,7 @@ console.log("Supposed to happen after");
 //                     mongoose.connection
 //                       .close()
 //                       .then(() => {
-
-//                           console.log(recipe);
-
+//                           // console.log(recipe);
 //                         console.log("Promise n°6");
 //                       })
 //                       .catch(err => console.log(err));
@@ -200,3 +207,43 @@ console.log("Supposed to happen after");
 //   .catch(err => {
 //     console.log(err);
 //   });
+
+// mongoose
+//   .connect("mongodb://localhost/recipe-app-dev", {
+//     useCreateIndex: true,
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   })
+//   .then(x => {
+//     console.log("Promise n°0");
+//   })
+//   .catch(err => console.log(err));
+
+// Recipe.create(franklesRecipe)
+//   .then(createdRecipe => {
+//     console.log("Promise n°1");
+//   })
+//   .catch(err => console.log(err));
+
+// Recipe.insertMany(data)
+//   .then(recipes => {
+//     console.log("Promise n°2");
+//   })
+//   .catch(err => console.log(err));
+
+// Recipe.findOneAndUpdate(
+//   { title: "Rigatoni alla Genovese" },
+//   { duration: 100 }
+// ).then(updatedRecipe => {
+//   console.log("Promise n °3");
+// });
+
+function foo() {
+  for (let i = 0; i < 1000000000000; i++) {
+    //
+  }
+  console.log("Je suis censé etre avant");
+}
+
+foo();
+console.log("Je suis censé etre areauhes");
