@@ -1,0 +1,52 @@
+.card {
+  $self: &;
+  color: black;
+  background: lightblue;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+
+  & hr {
+    border: 0px;
+    height: 0px;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+
+  &__description {
+    font-weight: 200;
+    font-size: 2.25rem;
+  }
+
+  &__macro {
+    font-size: 4rem;
+  }
+
+  &__controls {
+    // background: blue;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+
+  &--dark {
+    background: #111111;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+
+    // &hr {
+    //   border: 0px;
+    //   height: 0px;
+    //   border-bottom: 1px solid #fff;
+    //   overflow: hidden;
+    //   background-color: #fff;
+    // }
+  }
+}

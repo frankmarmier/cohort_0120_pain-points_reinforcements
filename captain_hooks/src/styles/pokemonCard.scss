@@ -1,0 +1,82 @@
+.card-pokemon {
+  border: 1px solid;
+  padding: 10px 20px;
+  & > * {
+    margin-bottom: 10px;
+  }
+  &__types {
+  }
+
+  &__name {
+    text-transform: capitalize;
+    font-size: 1.75rem;
+    font-weight: 200;
+  }
+  &__images {
+    display: flex;
+    & img {
+      cursor: pointer;
+      transition: transform 0.1s linear;
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+  }
+
+  &__type {
+    padding: 5px 10px;
+    margin: 0px 2px;
+    border-radius: 4px;
+    display: inline-block;
+    text-transform: capitalize;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3)
+    );
+    cursor: default;
+    background-position: centers;
+    &--poison {
+      background-color: purple;
+    }
+    &--grass {
+      background-color: green;
+    }
+    &--fire {
+      background-color: orange;
+    }
+    &--flying {
+      background-color: burlywood;
+    }
+    &--water {
+      background-color: aqua;
+    }
+    &--bug {
+      background-color: greenyellow;
+    }
+    &--normal {
+      border: 1px solid black;
+      border-radius: 4px;
+    }
+    &--electric {
+      background-color: yellow;
+    }
+    &--ground {
+      background-color: brown;
+    }
+    &--rock {
+      background-color: grey;
+    }
+    &--ice {
+      background-color: blue;
+    }
+    &--psychic {
+      background-color: blueviolet;
+    }
+    &--fairy {
+      background-color: pink;
+    }
+    &--steel {
+      background-color: lightslategrey;
+    }
+  }
+}

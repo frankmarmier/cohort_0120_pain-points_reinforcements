@@ -1,0 +1,33 @@
+.pokemon-list {
+  font-size: 2rem;
+  font-weight: 300;
+  height: 80vh;
+  overflow: scroll;
+  scrollbar-arrow-color: greenyellow;
+  text-transform: capitalize;
+  text-align: center;
+  overflow: auto;
+
+  background: linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+    radial-gradient(closest-side at 0 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+    radial-gradient(
+        farthest-side at 50% 100%,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0)
+      )
+      0 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 100% 100px, 100% 40px, 100% 14px, 100% 14px;
+  /* Opera doesn't support this in the shorthand */
+  background-attachment: local, local, scroll, scroll;
+}
+
+.pokemon-list::-webkit-scrollbar {
+  display: none;
+}
+
+.pokemon-name {
+  cursor: pointer;
+}
