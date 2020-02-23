@@ -7,8 +7,7 @@ const pokemonAPI = new apiHandler("https://pokeapi.co/api/v2/pokemon");
 class ClassPokemon extends Component {
   state = {
     pokemon: null,
-    isLoading: false,
-    isMounted: true
+    isLoading: false
   };
 
   componentDidMount() {
@@ -48,9 +47,10 @@ class ClassPokemon extends Component {
   render() {
     if (this.state.isLoading) return <div>Loading...</div>;
     if (!this.state.pokemon) return <div>404 No pokemon here.</div>;
+
     return (
       <div>
-        <CardPokemon pokemon={this.state.pokemon} />
+        <CardPokemon pokemon={this.state.pokemon} />;
       </div>
     );
   }

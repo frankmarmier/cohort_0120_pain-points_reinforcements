@@ -5,7 +5,9 @@
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-
+  & > * {
+    margin-bottom: 10px;
+  }
   & hr {
     border: 0px;
     height: 0px;

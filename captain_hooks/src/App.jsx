@@ -5,7 +5,7 @@ import Home from "./views/Home";
 import ClassAsync from "./views/ClassAsync";
 import HookAsync from "./views/HookAsync";
 import Intro from "./views/Intro";
-import Form from "./views/Form";
+import FormExample from "./views/FormExample";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import "./styles/reset.css";
@@ -21,7 +21,7 @@ function App() {
         <Route path="/intro" component={Intro} />
         <Route path="/class-async" component={ClassAsync} />
         <Route path="/hook-async" component={HookAsync} />
-        <Route path="/form" component={Form} />
+        <Route path="/form" component={FormExample} />
       </Switch>
     </div>
   );

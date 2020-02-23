@@ -5,9 +5,9 @@ const CardPokemon = ({ pokemon }) => {
   return (
     <div className="card">
       <h3 className="card-pokemon__name">{pokemon.name}</h3>
-      <p>Weight {pokemon.weight}</p>
+      <p>Weight: {pokemon.weight}</p>
+      <h4>Types:</h4>
       <div className="card-pokemon__types">
-        <h4>Types:&nbsp;</h4>
         <div className="card-pokemon__description">
           {pokemon.types.map((type, i) => (
             <p
