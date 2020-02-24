@@ -12,7 +12,7 @@ export const usePokemon = url => {
       .then(res => {
         //Emulating crappy internet in order to show Loading...
         setTimeout(() => {
-          setData(res.data);
+          setPokemon(res.data);
           setLoading(false);
         }, 1000);
       })
@@ -21,5 +21,5 @@ export const usePokemon = url => {
       });
   }, [url]);
 
-  return [pokemon, isLoading];
+  return [pokemon, isLoading, setPokemon];
 };

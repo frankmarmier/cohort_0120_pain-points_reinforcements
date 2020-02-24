@@ -4,7 +4,7 @@ import ClassPokemon from "../Components/ClassPokemon";
 
 class UsingAsync extends Component {
   state = {
-    selectedPokemon: null
+    selectedPokemon: ""
   };
 
   handleSelectedPokemon = index => {

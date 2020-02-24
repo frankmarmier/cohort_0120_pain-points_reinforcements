@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import "../styles/Form.scss";
+import { useForm } from "../hooks/useForm";
 
 const Form = props => {
-  const [formValues, setFormValues] = useState({});
+  const { formValues, getInputProps, handleChange } = useForm();
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log(formValues);
-  };
-
-  const handleChange = e => {
-    const value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    const name = e.target.name;
-    setFormValues({ ...formValues, [name]: value });
   };
 
   return (
@@ -25,7 +19,7 @@ const Form = props => {
           className="form__input"
           id="firstName"
           type="text"
-          name="firstName"
+          {...getInputProps("firstName")}
         />
       </div>
       <div className="form__group">
@@ -35,7 +29,7 @@ const Form = props => {
           className="form__input"
           id="lastName"
           type="text"
-          name="lastName"
+          {...getInputProps("lastName")}
         />
       </div>
       <div className="form__group">
@@ -45,7 +39,7 @@ const Form = props => {
           className="form__input"
           id="email"
           type="text"
-          name="email"
+          {...getInputProps("email")}
         />
       </div>
       <div className="form__group">
@@ -55,7 +49,7 @@ const Form = props => {
           className="form__input"
           id="password"
           type="password"
-          name="password"
+          {...getInputProps("password")}
         />
       </div>
       <div className="form__group">
@@ -65,7 +59,8 @@ const Form = props => {
           className="form__input"
           id="isAdmin"
           type="checkbox"
-          name="isAdmin"
+          
+          {...getInputProps("isAdmin")}
         />
       </div>
       <button className="btn is-success">Submit</button>
